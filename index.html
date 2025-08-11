@@ -611,13 +611,20 @@
                     email: formData.email,
                     companyName: formData.companyName,
                     jobTitle: formData.jobTitle,
-                    numberOfRecipients: formData.recipients,
-                    additionalMessage: formData.message
+                    numberOfRecipients: formData.recipients || '',
+                    additionalMessage: formData.message || ''
                 };
                 
+                // Log the exact data being sent
+                console.log('=== FORM SUBMISSION DEBUG ===');
+                console.log('Original form data:', formData);
+                console.log('Transformed submission data:', submissionData);
+                console.log('JSON payload:', JSON.stringify(submissionData, null, 2));
+                
                 try {
-                    // Use the test URL from your webhook settings
-                    const webhookUrl = 'https://automate.intricsolves.com/webhook-test/form-to-whatsapp';
+                    // Use the production URL
+                    const webhookUrl = 'https://automate.intricsolves.com/webhook/form-to-whatsapp';
+                    console.log('Sending request to:', webhookUrl);
                     
                     // POST request with JSON body
                     const response = await fetch(webhookUrl, {
@@ -627,9 +634,30 @@
                         },
                         body: JSON.stringify(submissionData)
                     });
+                    
+                    console.log('Response status:', response.status);
+                    console.log('Response status text:', response.statusText);
+                    
+                    // Log all response headers
+                    console.log('Response headers:');
+                    for (const [key, value] of response.headers.entries()) {
+                        console.log(`  ${key}: ${value}`);
+                    }
+
+                    // Try to get response body
+                    const responseText = await response.text();
+                    console.log('Response body:', responseText);
 
                     if (response.ok) {
-                        // On success
+                        // Try to parse as JSON
+                        let responseData;
+                        try {
+                            responseData = JSON.parse(responseText);
+                        } catch (e) {
+                            responseData = { rawResponse: responseText };
+                        }
+                        console.log('Success response:', responseData);
+                        
                         successMessage.classList.remove('hidden');
                         form.reset();
                         
@@ -640,21 +668,21 @@
                         });
                     } else {
                         // On server error
+                        let errorData;
                         try {
-                            const result = await response.json();
-                            console.error('Server error details:', result);
-                            errorText.textContent = result.message || 'An unexpected error occurred. Please try again.';
+                            errorData = JSON.parse(responseText);
+                            console.error('Server error details:', errorData);
+                            errorText.textContent = errorData.message || `Server error (${response.status}): ${response.statusText}`;
                         } catch (e) {
-                            const errorResponse = await response.text();
-                            console.error('Server error (non-JSON):', errorResponse);
-                            errorText.textContent = 'Server error. Please try again later.';
+                            console.error('Server error (non-JSON):', responseText);
+                            errorText.textContent = `Server error (${response.status}): ${response.statusText}`;
                         }
                         errorMessage.classList.remove('hidden');
                     }
                 } catch (err) {
                     // On network error
                     console.error('Fetch Error:', err);
-                    errorText.textContent = 'Network error. Please check your connection and try again.';
+                    errorText.textContent = `Network error: ${err.message}`;
                     errorMessage.classList.remove('hidden');
                 } finally {
                     // Restore button state
