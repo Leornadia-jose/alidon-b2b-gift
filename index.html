@@ -597,8 +597,8 @@
                 submitSpinner.classList.remove('hidden');
                 submitButton.disabled = true;
 
-                // Collect form data
-                const formData = {
+                // Collect form data into the correct structure
+                const submissionData = {
                     fullName: document.getElementById('fullName').value.trim(),
                     jobTitle: document.getElementById('jobTitle').value.trim(),
                     companyName: document.getElementById('companyName').value.trim(),
@@ -612,10 +612,13 @@
                     // The webhook URL
                     const webhookUrl = 'https://automate.intricsolves.com/webhook/form-to-whatsapp';
 
-                    // CHANGED TO GET REQUEST
-                    const params = new URLSearchParams(formData);
-                    const response = await fetch(`${webhookUrl}?${params}`, {
-                        method: 'GET'
+                    // CORRECT - POST request with JSON body
+                    const response = await fetch(webhookUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(submissionData)
                     });
 
 
@@ -636,6 +639,7 @@
                     }
                 } catch (err) {
                     // On network error
+                    console.error('Fetch Error:', err);
                     errorText.textContent = 'Network error. Please check your connection and try again.';
                     errorMessage.classList.remove('hidden');
                 } finally {
