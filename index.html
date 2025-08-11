@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alidon Corporate Gifting - Premium Teeth Whitening Kits</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #00A3E0 0%, #8CC63F 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #00A3E0 0%, #8CC63F 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .btn-gradient {
+            background: linear-gradient(135deg, #00A3E0 0%, #8CC63F 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-gradient:hover {
+            background: linear-gradient(135deg, #0092CC 0%, #7AB52F 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 163, 224, 0.3);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .purple-accent {
+            color: #A25DDC;
+        }
+        
+        .hero-pattern {
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(0, 163, 224, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(140, 198, 63, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(162, 93, 220, 0.1) 0%, transparent 50%);
+        }
+        
+        .section-divider {
+            background: linear-gradient(90deg, transparent 0%, #00A3E0 25%, #8CC63F 75%, transparent 100%);
+            height: 2px;
+            margin: 3rem auto;
+            max-width: 200px;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .video-container video {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 163, 224, 0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-text {
+                font-size: 2.5rem;
+            }
+        }
+        
+        .form-input {
+            transition: all 0.3s ease;
+            border: 2px solid #e5e7eb;
+        }
+        
+        .form-input:focus {
+            border-color: #00A3E0;
+            box-shadow: 0 0 0 3px rgba(0, 163, 224, 0.1);
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(0, 163, 224, 0.05) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4">
+            <div class="flex justify-center">
+                <img src="https://alidon.co.za/cdn/shop/files/Logo_aaac8127-a5e1-4c0a-bc5c-4b7e478a5606.png?v=1680098843&width=250" alt="Alidon Logo" class="h-12">
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden hero-pattern py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left">
+                    <h1 class="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 hero-text">
+                        The Corporate Gift They'll 
+                        <span class="gradient-text">Actually Use</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                        Introducing Alidon Teeth Whitening Kits: The premium, memorable gift for your team and clients that boosts confidence and shows you genuinely care.
+                    </p>
+                    <button onclick="scrollToForm()" class="btn-gradient text-white px-8 py-4 rounded-lg text-lg font-semibold inline-flex items-center space-x-2">
+                        <span>Get Your Custom Info Pack</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                <div class="flex justify-center">
+                    <img src="https://alidon.co.za/cdn/shop/files/Whitener_1.png?v=1722894415&width=1400" alt="Alidon Teeth Whitening Kit" class="max-w-full h-auto rounded-lg shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                See Alidon <span class="gradient-text">in Action</span>
+            </h2>
+            <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
+                Watch how easy and professional the Alidon teeth whitening experience is – the perfect corporate gift that delivers real results.
+            </p>
+            <div class="video-container">
+                <video controls playsinline webkit-playsinline poster="https://alidon.co.za/cdn/shop/files/Whitener_1.png?v=1722894415&width=1400" class="w-full rounded-lg">
+                    <source src="https://alidon.co.za/cdn/shop/videos/c/vp/41e1165e51014cf789788a147befc81b/41e1165e51014cf789788a147befc81b.HD-1080p-7.2Mbps-18280963.mp4?v=0" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Problem Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                Tired of <span class="text-red-500">Generic Corporate Gifts?</span>
+            </h2>
+            <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
+                Your employees and clients deserve better than forgettable gifts that end up collecting dust.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white p-8 rounded-lg shadow-lg card-hover">
+                    <div class="text-red-500 text-5xl mb-4">
+                        <i class="fas fa-wine-bottle"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Impersonal & Forgettable</h3>
+                    <p class="text-gray-600">Generic wine bottles and gift baskets that don't reflect your company's values or show genuine care.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-lg card-hover">
+                    <div class="text-red-500 text-5xl mb-4">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Low-Impact & Generic</h3>
+                    <p class="text-gray-600">One-size-fits-all gifts that fail to make a lasting impression or create meaningful connections.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-lg card-hover">
+                    <div class="text-red-500 text-5xl mb-4">
+                        <i class="fas fa-archive"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Ends Up Unused</h3>
+                    <p class="text-gray-600">Expensive gifts that sit in drawers, providing zero return on your investment or relationship building.</p>
+                </div>
+            </div>
+            
+            <p class="text-2xl font-semibold gradient-text mt-12">
+                Your employees and clients deserve better.
+            </p>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    A Gift That Shows You <span class="gradient-text">Genuinely Care</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Alidon teeth whitening kits aren't just gifts – they're investments in confidence, wellness, and lasting relationships.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-6 card-hover">
+                    <div class="gradient-bg w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-smile text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Boosts Confidence</h3>
+                    <p class="text-gray-600">A brighter smile empowers your team during meetings and client interactions, creating lasting positive impressions.</p>
+                </div>
+                
+                <div class="text-center p-6 card-hover">
+                    <div class="gradient-bg w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-heart text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Promotes Wellness</h3>
+                    <p class="text-gray-600">A tangible investment in your team's health and self-care that demonstrates your commitment to their wellbeing.</p>
+                </div>
+                
+                <div class="text-center p-6 card-hover">
+                    <div class="gradient-bg w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-star text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Unforgettable & Unique</h3>
+                    <p class="text-gray-600">Stands out in a sea of generic gifts, making a lasting impression that strengthens business relationships.</p>
+                </div>
+                
+                <div class="text-center p-6 card-hover">
+                    <div class="gradient-bg w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-award text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Fully Brandable</h3>
+                    <p class="text-gray-600">Custom packaging with your logo creates a premium, personal touch that reinforces your brand every time it's used.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    Trusted by <span class="gradient-text">Leading Companies</span> in South Africa
+                </h2>
+                <p class="text-xl text-gray-600">Join forward-thinking companies that choose meaningful corporate gifts</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
+                <div class="testimonial-card p-8 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 text-lg">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">
+                        "Our team absolutely loved this! It was such a refreshing change from the usual corporate gifts and really showed that we're invested in their wellness. The process was seamless from start to finish, and the custom packaging looked incredibly professional."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-white"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-900">Sarah Mitchell</p>
+                            <p class="text-gray-600 text-sm">Head of People, TechFlow Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card p-8 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 text-lg">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">
+                        "We sent these to our top 50 clients and the response was overwhelmingly positive. It's definitely the most ROI we've ever gotten from a corporate gift. Several clients mentioned it during follow-up meetings – it's a real conversation starter."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-white"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-900">Michael Roberts</p>
+                            <p class="text-gray-600 text-sm">Marketing Director, Cape Financial Group</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    What's Inside the <span class="gradient-text">Premium Kit</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Every Alidon kit includes everything needed for a professional teeth whitening experience
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                <div class="order-2 lg:order-1">
+                    <div class="space-y-8">
+                        <div class="flex items-start space-x-4">
+                            <div class="gradient-bg w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-syringe text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 mb-2">Professional Whitening Gel</h3>
+                                <p class="text-gray-600">Dentist-grade whitening gel syringes for safe, effective results at home.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="gradient-bg w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-lightbulb text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 mb-2">LED Acceleration Light</h3>
+                                <p class="text-gray-600">Advanced LED mouthpiece that accelerates the whitening process for faster results.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="gradient-bg w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-teeth text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 mb-2">Custom-Molded Trays</h3>
+                                <p class="text-gray-600">Comfortable, flexible trays that ensure even gel application and maximum comfort.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="gradient-bg w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-gift text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 mb-2">Premium Branded Packaging</h3>
+                                <p class="text-gray-600">Elegant presentation box with your company logo and branding for a professional touch.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-1 lg:order-2 flex justify-center">
+                    <img src="https://alidon.co.za/cdn/shop/files/Whitener_2.png?v=1722894433&width=1400" alt="Alidon Kit Contents" class="max-w-full h-auto rounded-lg shadow-xl">
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="text-center">
+                    <img src="https://alidon.co.za/cdn/shop/files/alidon-teeth-whitening-kit.png?v=1722894425&width=720" alt="Complete Alidon Kit" class="max-w-full h-auto rounded-lg shadow-lg mx-auto mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Complete Professional Kit</h3>
+                    <p class="text-gray-600">Everything needed for a spa-quality teeth whitening experience at home.</p>
+                </div>
+                
+                <div class="text-center">
+                    <img src="https://alidon.co.za/cdn/shop/files/Model_4.png?v=1722894444&width=720" alt="Using Alidon Kit" class="max-w-full h-auto rounded-lg shadow-lg mx-auto mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Easy & Comfortable to Use</h3>
+                    <p class="text-gray-600">Simple application process that fits into any busy professional's schedule.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="contact-form" class="py-16 gradient-bg text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-4">
+                Ready to See How It Works for Your Company?
+            </h2>
+            <p class="text-xl mb-12 opacity-90">
+                Get a complimentary info pack sent directly to you. It includes package options, bulk pricing, and custom branding mockups.
+            </p>
+            
+            <div class="bg-white rounded-lg p-8 shadow-2xl max-w-2xl mx-auto">
+                <form id="infoPackForm" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-left text-gray-700 font-semibold mb-2">Full Name *</label>
+                            <input type="text" id="fullName" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" placeholder="Enter your full name">
+                            <span class="error-message text-red-500 text-sm hidden">Please enter your full name</span>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-left text-gray-700 font-semibold mb-2">Job Title *</label>
+                            <input type="text" id="jobTitle" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" placeholder="e.g., HR Manager">
+                            <span class="error-message text-red-500 text-sm hidden">Please enter your job title</span>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-left text-gray-700 font-semibold mb-2">Company Name *</label>
+                            <input type="text" id="companyName" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" placeholder="Enter company name">
+                            <span class="error-message text-red-500 text-sm hidden">Please enter your company name</span>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-left text-gray-700 font-semibold mb-2">Email Address *</label>
+                            <input type="email" id="email" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" placeholder="you@company.com">
+                            <span class="error-message text-red-500 text-sm hidden">Please enter a valid email address</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-left text-gray-700 font-semibold mb-2">Phone Number *</label>
+                        <input type="tel" id="phone" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" placeholder="e.g., +27 11 123 4567">
+                        <span class="error-message text-red-500 text-sm hidden">Please enter your phone number</span>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-left text-gray-700 font-semibold mb-2">Approximate Number of Recipients</label>
+                        <select id="recipients" class="form-input w-full px-4 py-3 rounded-lg focus:outline-none">
+                            <option value="">Select quantity range</option>
+                            <option value="1-25">1-25 kits</option>
+                            <option value="26-50">26-50 kits</option>
+                            <option value="51-100">51-100 kits</option>
+                            <option value="101-250">101-250 kits</option>
+                            <option value="250+">250+ kits</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-left text-gray-700 font-semibold mb-2">Additional Message (Optional)</label>
+                        <textarea id="message" rows="3" class="form-input w-full px-4 py-3 rounded-lg focus:outline-none" placeholder="Tell us about your gifting needs or timeline..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full btn-gradient text-white px-8 py-4 rounded-lg text-lg font-semibold inline-flex items-center justify-center space-x-2">
+                        <span>Get My Custom Info Pack Now</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+                
+                <div id="successMessage" class="hidden mt-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+                    <i class="fas fa-check-circle mr-2"></i>
+                    Thank you! Your info pack request has been submitted. We'll be in touch within 24 hours.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center">
+                <img src="https://alidon.co.za/cdn/shop/files/Logo_aaac8127-a5e1-4c0a-bc5c-4b7e478a5606.png?v=1680098843&width=250" alt="Alidon Logo" class="h-12 mx-auto mb-4 filter brightness-0 invert">
+                <p class="text-gray-400 mb-8">Transforming smiles, building confidence, strengthening relationships.</p>
+                <div class="flex justify-center space-x-6 text-2xl">
+                    <a href="https://www.facebook.com/alidonteeth" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/alidonteeth/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@alidonteeth" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-tiktok"></i></a>
+                </div>
+                <div class="mt-8 pt-8 border-t border-gray-700">
+                    <p class="text-gray-400">&copy; 2024 Alidon. All rights reserved. | Premium Corporate Gifting Solutions</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling function
+        function scrollToForm() {
+            document.getElementById('contact-form').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        // Form validation and submission
+        document.getElementById('infoPackForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Clear previous error messages
+            document.querySelectorAll('.error-message').forEach(msg => msg.classList.add('hidden'));
+            
+            let isValid = true;
+            
+            // Validate required fields
+            const requiredFields = ['fullName', 'jobTitle', 'companyName', 'email', 'phone'];
+            
+            requiredFields.forEach(fieldId => {
+                const field = document.getElementById(fieldId);
+                const errorMsg = field.nextElementSibling;
+                
+                if (!field.value.trim()) {
+                    errorMsg.classList.remove('hidden');
+                    isValid = false;
+                }
+            });
+            
+            // Email validation
+            const email = document.getElementById('email');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email.value && !emailRegex.test(email.value)) {
+                email.nextElementSibling.classList.remove('hidden');
+                isValid = false;
+            }
+            
+            if (isValid) {
+                // Show success message
+                document.getElementById('successMessage').classList.remove('hidden');
+                
+                // Reset form
+                this.reset();
+                
+                // Simulate form submission (in real implementation, you'd send data to your server)
+                console.log('Form submitted successfully');
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    document.getElementById('successMessage').classList.add('hidden');
+                }, 5000);
+            }
+        });
+
+        // Add animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.card-hover');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('animate-fadeInUp');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+        
+        // Initialize animations on page load
+        window.addEventListener('load', animateOnScroll);
+
+        // Video optimization
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.querySelector('video');
+            if (video) {
+                video.addEventListener('loadstart', function() {
+                    console.log('Video loading started');
+                });
+                
+                video.addEventListener('error', function(e) {
+                    console.log('Video loading error:', e);
+                    // Could add fallback image here
+                });
+            }
+        });
+    </script>
+</body>
+</html>
