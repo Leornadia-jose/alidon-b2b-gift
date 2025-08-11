@@ -612,14 +612,12 @@
                     // The webhook URL
                     const webhookUrl = 'https://automate.intricsolves.com/webhook/form-to-whatsapp';
 
-                    // Send the data
-                    const response = await fetch(webhookUrl, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(formData)
+                    // CHANGED TO GET REQUEST
+                    const params = new URLSearchParams(formData);
+                    const response = await fetch(`${webhookUrl}?${params}`, {
+                        method: 'GET'
                     });
+
 
                     if (response.ok) {
                         // On success
