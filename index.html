@@ -50,10 +50,6 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
         
-        .purple-accent {
-            color: #A25DDC;
-        }
-        
         .hero-pattern {
             background-image: 
                 radial-gradient(circle at 20% 50%, rgba(0, 163, 224, 0.1) 0%, transparent 50%),
@@ -415,36 +411,44 @@
                 <form id="infoPackForm" class="space-y-6" novalidate>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label for="fullName" class="block text-left text-gray-700 font-semibold mb-2">Full Name *</label>
-                            <input type="text" id="fullName" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none text-gray-800" placeholder="Enter your full name">
-                            <span class="error-message text-red-500 text-sm hidden text-left mt-1">Please enter your full name</span>
+                            <label for="firstName" class="block text-left text-gray-700 font-semibold mb-2">First Name *</label>
+                            <input type="text" id="firstName" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none text-gray-800" placeholder="Enter your first name">
+                            <span class="error-message text-red-500 text-sm hidden text-left mt-1">Please enter your first name</span>
                         </div>
                         
                         <div>
-                            <label for="jobTitle" class="block text-left text-gray-700 font-semibold mb-2">Job Title *</label>
-                            <input type="text" id="jobTitle" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none text-gray-800" placeholder="e.g., HR Manager">
-                            <span class="error-message text-red-500 text-sm hidden text-left mt-1">Please enter your job title</span>
+                            <label for="lastName" class="block text-left text-gray-700 font-semibold mb-2">Last Name *</label>
+                            <input type="text" id="lastName" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none text-gray-800" placeholder="Enter your last name">
+                            <span class="error-message text-red-500 text-sm hidden text-left mt-1">Please enter your last name</span>
                         </div>
                     </div>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
+                            <label for="jobTitle" class="block text-left text-gray-700 font-semibold mb-2">Job Title *</label>
+                            <input type="text" id="jobTitle" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none text-gray-800" placeholder="e.g., HR Manager">
+                            <span class="error-message text-red-500 text-sm hidden text-left mt-1">Please enter your job title</span>
+                        </div>
+                        
+                        <div>
                             <label for="companyName" class="block text-left text-gray-700 font-semibold mb-2">Company Name *</label>
                             <input type="text" id="companyName" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none text-gray-800" placeholder="Enter company name">
                             <span class="error-message text-red-500 text-sm hidden text-left mt-1">Please enter your company name</span>
                         </div>
-                        
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label for="email" class="block text-left text-gray-700 font-semibold mb-2">Email Address *</label>
                             <input type="email" id="email" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none text-gray-800" placeholder="you@company.com">
                             <span class="error-message text-red-500 text-sm hidden text-left mt-1">Please enter a valid email address</span>
                         </div>
-                    </div>
-                    
-                    <div>
-                        <label for="phone" class="block text-left text-gray-700 font-semibold mb-2">WhatsApp Number *</label>
-                        <input type="tel" id="phone" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none text-gray-800" placeholder="e.g., +27 81 123 4567">
-                        <span class="error-message text-red-500 text-sm hidden text-left mt-1">Please enter your WhatsApp number</span>
+                        
+                        <div>
+                            <label for="phone" class="block text-left text-gray-700 font-semibold mb-2">WhatsApp Number *</label>
+                            <input type="tel" id="phone" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none text-gray-800" placeholder="e.g., +27 81 123 4567">
+                            <span class="error-message text-red-500 text-sm hidden text-left mt-1">Please enter your WhatsApp number</span>
+                        </div>
                     </div>
                     
                     <div>
@@ -517,7 +521,7 @@
             const errorText = document.getElementById('errorText');
             
             // All required fields for validation
-            const requiredFields = ['fullName', 'jobTitle', 'companyName', 'email', 'phone'];
+            const requiredFields = ['firstName', 'lastName', 'jobTitle', 'companyName', 'email', 'phone'];
             
             // Function to show an error for a specific field
             function showError(input, message) {
@@ -586,7 +590,8 @@
                 
                 // Collect form data
                 const formData = {
-                    fullName: document.getElementById('fullName').value.trim(),
+                    firstName: document.getElementById('firstName').value.trim(),
+                    lastName: document.getElementById('lastName').value.trim(),
                     jobTitle: document.getElementById('jobTitle').value.trim(),
                     companyName: document.getElementById('companyName').value.trim(),
                     email: document.getElementById('email').value.trim(),
@@ -602,16 +607,18 @@
                     whatsappNumber = '+27' + whatsappNumber.substring(1);
                 }
                 
-                // Transform data to match n8n expectations
+                // Transform data to match n8n workflow expectations
                 const submissionData = {
-                    // Split fullName into firstName and lastName
-                    firstName: formData.fullName.split(' ')[0] || '',
-                    lastName: formData.fullName.split(' ').slice(1).join(' ') || '',
+                    firstName: formData.firstName,
+                    lastName: formData.lastName,
                     whatsappNumber: whatsappNumber,
-                    email: formData.email,
+                    // Note: n8n expects emailAddress instead of email
+                    emailAddress: formData.email,
                     companyName: formData.companyName,
                     jobTitle: formData.jobTitle,
+                    // Note: n8n expects numberOfRecipients instead of recipients
                     numberOfRecipients: formData.recipients || '',
+                    // Note: n8n expects additionalMessage instead of message
                     additionalMessage: formData.message || ''
                 };
                 
